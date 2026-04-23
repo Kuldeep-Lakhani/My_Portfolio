@@ -51,8 +51,12 @@ export function Contact() {
         });
         reset();
       } else {
+        const errorMessage = typeof result.error === 'object' && result.error?.message 
+          ? result.error.message 
+          : (typeof result.error === 'string' ? result.error : "Something went wrong. Please try again.");
+
         toast.error("Failed to send", {
-          description: result.error || "Something went wrong. Please try again.",
+          description: errorMessage,
         });
       }
     } catch (err) {

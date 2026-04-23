@@ -55,18 +55,18 @@ export function Skills() {
 
         <div ref={containerRef} className="space-y-24">
           {/* Logo-based skills */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {logoCategories.map((category) => (
-              <div key={category.category} className="skill-category space-y-6">
-                <h3 className="text-lg font-bold text-foreground border-l-4 border-primary pl-3">
+              <div key={category.category} className="skill-category flex flex-col space-y-6 bg-card border border-border/50 rounded-3xl p-8 shadow-sm transition-all hover:shadow-md hover:border-primary/20">
+                <h3 className="text-xl font-bold text-foreground border-l-4 border-primary pl-4">
                   {category.category}
                 </h3>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 pt-2">
                   {category.skills.map((skill) => (
-                    <div key={skill.name} className="skill-badge group flex items-center justify-center p-2 rounded-lg" title={skill.name}>
+                    <div key={skill.name} className="skill-badge group flex items-center justify-center p-3 rounded-2xl bg-background/80 border border-border/40 hover:bg-background hover:border-primary/40 hover:shadow-sm transition-all duration-300" title={skill.name}>
                       {skill.icon && (
                         <div 
-                          className="w-14 h-14 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full transition-transform group-hover:scale-110"
+                          className="w-12 h-12 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full transition-transform duration-300 group-hover:scale-110"
                           dangerouslySetInnerHTML={{ __html: skill.icon }}
                         />
                       )}
@@ -78,19 +78,20 @@ export function Skills() {
           </div>
 
           {/* Text-based skills */}
-          <div className="pt-12 border-t border-border/50">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="pt-16 mt-8 border-t border-border/40">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {textCategories.map((category) => (
-                <div key={category.category} className="skill-category space-y-6">
-                  <h3 className="text-lg font-bold text-foreground/80">
+                <div key={category.category} className="skill-category flex flex-col space-y-5 bg-card/40 border border-border/40 rounded-3xl p-7 hover:bg-card hover:border-primary/20 hover:shadow-md transition-all duration-300">
+                  <h3 className="text-xl font-bold text-foreground flex items-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(var(--primary),0.8)]"></span>
                     {category.category}
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2.5 pt-1">
                     {category.skills.map((skill) => (
                       <div key={skill.name} className="skill-badge group">
                         <Badge 
-                          variant="secondary" 
-                          className="bg-secondary/30 hover:bg-primary/20 hover:text-primary border-transparent hover:border-primary/30 text-foreground font-normal transition-all duration-300 px-3 py-1 cursor-default hover:-translate-y-1 hover:scale-105"
+                          variant="outline" 
+                          className="bg-background/60 border-border/50 hover:bg-primary/10 hover:text-primary hover:border-primary/50 text-foreground/90 font-medium transition-all duration-300 px-3.5 py-1.5 cursor-default hover:-translate-y-1 hover:shadow-sm"
                         >
                           {skill.name}
                         </Badge>
