@@ -28,7 +28,7 @@ export const projects: Project[] = [
   },
   {
     id: "ai-influencer",
-    title: "AI Influencer Platform",
+    title: "AI Influencer",
     tagline: "Subscription-Based Social Platform for AI Influencers",
     description: "A full-stack platform enabling users to interact with AI personalities through real-time chat, subscriptions, and monetized content.",
     problem: "Creating a seamless, app-like experience for AI interactions requires scalable real-time messaging and secure financial transactions.",

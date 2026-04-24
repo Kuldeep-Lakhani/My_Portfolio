@@ -1,4 +1,4 @@
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
   <circle cx="256" cy="256" r="256" fill="#2B79E4" />
-  <text x="256" y="256" dy=".35em" font-family="system-ui, Arial, sans-serif" font-weight="900" font-size="320" fill="#ffffff" text-anchor="middle">K</text>
+  <text x="256" y="256" dy=".35em" font-family="system-ui, Arial, sans-serif" font-weight="600" font-size="280" fill="#ffffff" text-anchor="middle" letter-spacing="-10">KL</text>
 </svg>

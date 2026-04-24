@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: "Building scalable, AI-powered web products with exceptional UX.",
     type: "website",
     locale: "en_US",
-    url: "https://kuldeep.dev",
+    url: "https://kuldeeplakhani.vercel.app/",
     siteName: "Kuldeep Lakhani Portfolio",
   },
   twitter: {
