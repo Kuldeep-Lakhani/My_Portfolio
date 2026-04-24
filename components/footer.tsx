@@ -36,7 +36,7 @@ export function Footer() {
             </a>
             <div className="space-y-4">
               <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-                Full-Stack Developer & AI SaaS Builder. Passionate about creating high-performance web applications and scalable architectures that transform complex ideas into seamless digital experiences.
+                Full-Stack Developer. Passionate about creating scalable, high-performance web applications using Next.js, React, Node.js, and modern databases to transform complex ideas into seamless digital experiences.
               </p>
             </div>
           </div>

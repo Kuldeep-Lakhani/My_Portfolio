@@ -120,7 +120,7 @@ export function Hero() {
             ref={descriptionRef}
             className="mt-6 text-lg leading-8 text-muted-foreground max-w-2xl"
           >
-            Senior Full-Stack Engineer specializing in high-impact SaaS development. I architect end-to-end solutions that bridge the gap between complex engineering and intuitive product design.
+            Full-Stack Developer specializing in scalable web development. I build end-to-end solutions that bridge the gap between robust engineering and intuitive product design.
           </p>
 
           <div

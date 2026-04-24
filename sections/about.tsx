@@ -13,7 +13,7 @@ export function About() {
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                I am a Full-Stack Engineer specialized in building high-performance web products using <strong>Next.js, TypeScript, and AI-assisted development</strong>. I bridge the gap between complex engineering and intuitive product design, focusing on delivering measurable business impact for SaaS companies.
+                I am a Full-Stack Developer specialized in building scalable, high-performance web applications. My core stack includes <strong>Next.js, React, TypeScript, Node.js, Tailwind CSS, and modern database solutions like MongoDB and PostgreSQL</strong>. I bridge the gap between robust engineering and intuitive product design, focusing on delivering seamless user experiences and measurable business impact.
               </p>
               <p>
                 Currently, I am leading development at <strong>Desilo Technologies</strong>, where I architect scalable systems and integrate generative AI capabilities to solve real-world industry challenges.
