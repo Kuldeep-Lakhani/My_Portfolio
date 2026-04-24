@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react"
 import { Container } from "@/components/shared/container"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Moon, Sun, Menu, X, Download } from "lucide-react"
 import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -42,8 +43,19 @@ export function Navbar() {
       )}
     >
       <Container className="flex items-center justify-between">
-        <a href="#" className="text-2xl font-bold tracking-wider text-primary">
-          KL
+        <a href="#" className="group relative flex items-center gap-1.5 transition-transform duration-300 hover:scale-105">
+          <Image
+            src="/pic-logo.png"
+            alt="Logo"
+            width={144}
+            height={144}
+            quality={100}
+            className="rounded-xl shadow-md shadow-primary/20 object-cover h-9 w-9"
+          />
+          <span className="text-2xl font-black tracking-wide text-foreground">
+            Lakhani
+          </span>
+          <span className="text-primary text-3xl leading-none font-bold -ml-1">.</span>
         </a>
 
         {/* Desktop Nav */}
@@ -57,6 +69,8 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
+        </nav>
+        <div className="hidden md:flex items-center gap-4">
           <Button
             variant="ghost"
             size="icon"
@@ -65,7 +79,13 @@ export function Navbar() {
           >
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
-        </nav>
+          <a href="/CV.pdf" download="Kuldeep_Lakhani_CV.pdf">
+            <Button className="rounded-full font-medium px-6 cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 flex items-center gap-2">
+              <Download className="w-4 h-4" />
+              Resume
+            </Button>
+          </a>
+        </div>
 
         {/* Mobile Nav Toggle */}
         <div className="flex items-center gap-4 md:hidden">
@@ -100,7 +120,12 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <Button className="w-full rounded-xl py-6 text-lg cursor-pointer">Resume</Button>
+          <a href="/CV.pdf" download="Kuldeep_Lakhani_CV.pdf" className="w-full" onClick={() => setMobileMenuOpen(false)}>
+            <Button className="w-full rounded-xl py-6 text-lg cursor-pointer hover:scale-[1.02] active:scale-95 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2">
+              <Download className="w-5 h-5" />
+              Resume
+            </Button>
+          </a>
         </div>
       )}
     </header>

@@ -104,7 +104,7 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Open to opportunities
+              Available for Full-Time & Freelance Roles
             </Badge>
           </div>
 
@@ -112,7 +112,7 @@ export function Hero() {
             ref={titleRef}
             className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl max-w-5xl"
           >
-            Hi, I&apos;m <span className="text-primary">Kuldeep Lakhani</span>. <br />
+            Hi, I&apos;m <span className="text-primary">Kuldeep</span><br />
             Building <span className="text-primary">scalable</span>, AI-powered products.
           </h1>
 
@@ -125,7 +125,7 @@ export function Hero() {
 
           <div
             ref={ctaRef}
-            className="mt-10 flex items-center justify-center gap-x-6"
+            className="mt-10 flex items-center justify-center 2sm:gap-x-6 gap-x-4"
           >
             <a
               href="#projects"
@@ -141,7 +141,7 @@ export function Hero() {
               href="#contact"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }), 
-                "rounded-full px-8 transition-all hover:scale-105 active:scale-95"
+                "rounded-full px-8 transition-all hover:scale-105 active:scale-95 border border-border/50 hover:border-primary/50 hover:bg-primary/5 hover:text-primary"
               )}
             >
               Contact Me
