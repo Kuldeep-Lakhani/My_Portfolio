@@ -79,7 +79,7 @@ export function Navbar() {
           >
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
-          <a href="/CV.pdf" download="Kuldeep_Lakhani_CV.pdf">
+          <a href="/Kuldeep_Lakhani_CV.pdf" download="Kuldeep_Lakhani_CV.pdf">
             <Button className="rounded-full font-medium px-6 cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 flex items-center gap-2">
               <Download className="w-4 h-4" />
               Resume
