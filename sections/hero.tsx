@@ -25,11 +25,11 @@ export function Hero() {
     tl.fromTo(
       [badgeRef.current, titleRef.current, descriptionRef.current, ctaRef.current],
       { opacity: 0, y: 30, filter: "blur(10px)" },
-      { 
-        opacity: 1, 
-        y: 0, 
+      {
+        opacity: 1,
+        y: 0,
         filter: "blur(0px)",
-        duration: 0.8, 
+        duration: 0.8,
         stagger: 0.15,
         ease: "power4.out",
         delay: 0.2
@@ -83,16 +83,16 @@ export function Hero() {
   }, { scope: containerRef })
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32">
+    <section ref={containerRef} className="relative overflow-hidden pt-32 pb-20 md:pt-48 md:pb-32 h-[100dvh]">
       {/* Animated Background Gradient */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div 
+        <div
           ref={glow1Ref}
-          className="absolute -top-[20%] -left-[10%] h-[140%] w-[120%] opacity-20 [background:radial-gradient(circle_at_center,var(--color-primary)_0,transparent_50%)]" 
+          className="absolute -top-[20%] -left-[10%] h-[140%] w-[120%] opacity-20 [background:radial-gradient(circle_at_center,var(--color-primary)_0,transparent_50%)]"
         />
-        <div 
+        <div
           ref={glow2Ref}
-          className="absolute top-[20%] -right-[10%] h-[140%] w-[120%] opacity-10 [background:radial-gradient(circle_at_center,var(--color-primary)_0,transparent_50%)]" 
+          className="absolute top-[20%] -right-[10%] h-[140%] w-[120%] opacity-10 [background:radial-gradient(circle_at_center,var(--color-primary)_0,transparent_50%)]"
         />
       </div>
 
@@ -130,17 +130,17 @@ export function Hero() {
             <a
               href="#projects"
               className={cn(
-                buttonVariants({ variant: "default", size: "lg" }), 
+                buttonVariants({ variant: "default", size: "lg" }),
                 "rounded-full px-8 group transition-all hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-primary/20"
               )}
             >
-              View Work 
+              View Work
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#contact"
               className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }), 
+                buttonVariants({ variant: "outline", size: "lg" }),
                 "rounded-full px-8 transition-all hover:scale-105 active:scale-95 border border-border/50 hover:border-primary/50 hover:bg-primary/5 hover:text-primary"
               )}
             >

@@ -52,10 +52,9 @@ export function Navbar() {
             quality={100}
             className="rounded-xl shadow-md shadow-primary/20 object-cover h-9 w-9"
           />
-          <span className="text-2xl font-black tracking-wide text-foreground">
+          <span className="text-2xl font-bold tracking-wide text-foreground">
             Lakhani
           </span>
-          <span className="text-primary text-3xl leading-none font-bold -ml-1">.</span>
         </a>
 
         {/* Desktop Nav */}
