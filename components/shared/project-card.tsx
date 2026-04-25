@@ -107,34 +107,36 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </p>
           </CardContent>
           
-          <CardFooter className="gap-x-3" onClick={(e) => e.stopPropagation()}>
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "sm" }), 
-                  "rounded-full h-8 px-4 transition-all hover:bg-primary hover:text-primary-foreground hover:border-primary"
-                )}
-              >
-                Demo <ExternalLink className="ml-1.5 h-3 w-3" />
-              </a>
-            )}
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "icon" }), 
-                  "rounded-full h-8 w-8 hover:bg-primary/10 hover:text-primary transition-colors"
-                )}
-              >
-                <Code className="h-4 w-4" />
-              </a>
-            )}
-          </CardFooter>
+          {(project.liveUrl || project.githubUrl) && (
+            <CardFooter className="gap-x-3" onClick={(e) => e.stopPropagation()}>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }), 
+                    "rounded-full h-8 px-4 transition-all hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                  )}
+                >
+                  Demo <ExternalLink className="ml-1.5 h-3 w-3" />
+                </a>
+              )}
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }), 
+                    "rounded-full h-8 w-8 hover:bg-primary/10 hover:text-primary transition-colors"
+                  )}
+                >
+                  <Code className="h-4 w-4" />
+                </a>
+              )}
+            </CardFooter>
+          )}
         </Card>
       </div>
 

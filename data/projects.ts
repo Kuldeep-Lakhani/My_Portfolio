@@ -11,6 +11,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  modalImages?: string[];
 }
 
 export const projects: Project[] = [
@@ -25,6 +26,18 @@ export const projects: Project[] = [
     image: "/projects/Cabotto.png",
     techStack: ["React 18", "Redux Toolkit", "Tailwind CSS", "PrimeReact", "Socket.io", "Stripe JS", "Firebase Auth", "WebRTC", "HLS.js"],
     liveUrl: "https://cabotto.com",
+  },
+  {
+    id: "cabotto-support",
+    title: "Cabotto Support",
+    tagline: "Modern Help Center & Documentation Platform",
+    description: "The primary support hub for the Cabotto ecosystem, providing users with essential resources, legal documentation, and interactive support tools.",
+    problem: "The platform required a scalable, SEO-optimized system to manage high-traffic informational content, legal compliance, and monetization guides.",
+    solution: "Built with Next.js 15 App Router for SSR/SSG optimization, utilizing MongoDB for dynamic content management and featuring an integrated Chatbot.",
+    outcome: "Delivered an accessible, clean knowledge base that streamlines user assistance and efficiently handles mandatory compliance documentation.",
+    image: "/projects/cabotto-support.png",
+    techStack: ["Next.js 15", "React 19", "Tailwind CSS 4", "MongoDB", "Mongoose", "Axios", "React Toastify"],
+    liveUrl: "https://support.cabotto.com",
   },
   {
     id: "ai-influencer",
@@ -49,6 +62,18 @@ export const projects: Project[] = [
     image: "/projects/nira.png",
     techStack: ["Next.js 15", "React 18", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Zustand", "FullCalendar", "Framer Motion"],
     liveUrl: "https://nira-desilo.vercel.app/",
+  },
+  {
+    id: "nira-mobile",
+    title: "Nira Mobile",
+    tagline: "Mobile Workforce Scheduling & Management",
+    description: "A production-ready mobile companion to the Nira ecosystem, empowering managers and employees to track productivity, manage shifts, and monitor KPIs in real-time.",
+    problem: "Mobile workforces require a high-performance, on-the-go solution to manage complex schedules, monitor metrics, and execute rapid decisions without relying on desktop interfaces.",
+    solution: "Developed a 'Premium Dark' cross-platform application using Expo and React Native, featuring secure JWT authentication via Expo Secure Store and optimized global state with Zustand.",
+    outcome: "Delivered a responsive mobile suite featuring a real-time workforce dashboard, dynamic weekly planning, deep-dive analytics, and native document sharing for seamless reporting.",
+    image: "/projects/nira-m-1.png",
+    techStack: ["Expo", "React Native", "TypeScript", "Zustand", "React Navigation", "Axios", "Expo Secure Store", "SheetJS", "i18next"],
+    modalImages: ["/projects/nira-m-2.png", "/projects/nira-m-3.png", "/projects/nira-m-4.png"],
   },
   {
     id: "flaamo",
@@ -109,5 +134,17 @@ export const projects: Project[] = [
     image: "/projects/miracle.png",
     techStack: ["Next.js 15", "React 18", "Tailwind CSS", "Node.js"],
     liveUrl: "https://miraclefreshner.co/",
+  },
+  {
+    id: "assetpass-support",
+    title: "AssetPass Support",
+    tagline: "Digital Inheritance as a Service (DIaaS) Platform",
+    description: "A DIaaS platform designed to solve the 'digital legacy' problem, ensuring cryptocurrency, legal documents, passwords, and photos aren't lost forever.",
+    problem: "Standard cloud drives lack mechanisms to securely pass on digital assets to beneficiaries without exposing the contents to intermediaries or trustees.",
+    solution: "Implemented a unique trustee-based release system utilizing military-grade, zero-knowledge encryption where data is encrypted on the device before reaching the cloud.",
+    outcome: "Delivered a quantum-proof White-Label solution for law firms and private banks, along with secure direct plans for personal and family use.",
+    image: "/projects/assetpass-support.png",
+    techStack: ["Wordpress"],
+    liveUrl: "https://assetpass.com/support/",
   }
 ];

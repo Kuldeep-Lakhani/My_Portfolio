@@ -89,28 +89,30 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                   </div>
 
                   {/* Links Row */}
-                  <div className="flex flex-wrap gap-4">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(buttonVariants({ variant: "default", size: "lg" }), "rounded-full px-6 md:px-8")}
-                      >
-                        Visit Live Project <ExternalLink className="ml-2 h-4 w-4" />
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full px-6 md:px-8")}
-                      >
-                        View Source <Code className="ml-2 h-4 w-4" />
-                      </a>
-                    )}
-                  </div>
+                  {(project.liveUrl || project.githubUrl) && (
+                    <div className="flex flex-wrap gap-4">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(buttonVariants({ variant: "default", size: "lg" }), "rounded-full px-6 md:px-8")}
+                        >
+                          Visit Live Project <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full px-6 md:px-8")}
+                        >
+                          View Source <Code className="ml-2 h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  )}
 
                   {/* Narrative Sections */}
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
@@ -168,6 +170,27 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                       </section>
                     </div>
                   </div>
+
+                  {/* Project Gallery */}
+                  {project.modalImages && project.modalImages.length > 0 && (
+                    <div className="mt-6 pt-8 border-t border-border/50">
+                      <div className="flex items-center gap-3 mb-6">
+                        <h3 className="text-2xl font-bold tracking-tight">Project Gallery</h3>
+                      </div>
+                      <div className="flex flex-col gap-8">
+                        {project.modalImages.map((img, idx) => (
+                          <div key={idx} className="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden border border-border/50 shadow-sm group bg-muted/20">
+                            <Image
+                              src={img}
+                              alt={`${project.title} screenshot ${idx + 1}`}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
