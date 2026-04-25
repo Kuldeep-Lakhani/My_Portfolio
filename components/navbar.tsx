@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Container } from "@/components/shared/container"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Menu, X, Download } from "lucide-react"
+import { Moon, Sun, Menu, X, Download, Loader2 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
@@ -21,6 +21,15 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isDownloading, setIsDownloading] = useState(false)
+
+  const handleDownload = () => {
+    if (isDownloading) return
+    setIsDownloading(true)
+    setTimeout(() => {
+      setIsDownloading(false)
+    }, 1500)
+  }
 
   useEffect(() => {
     setMounted(true)
@@ -78,9 +87,13 @@ export function Navbar() {
           >
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
-          <a href="/Kuldeep_Lakhani_CV.pdf" download="Kuldeep_Lakhani_CV.pdf">
+          <a href="/Kuldeep_Lakhani_CV.pdf" download="Kuldeep_Lakhani_CV.pdf" onClick={handleDownload}>
             <Button className="rounded-full font-medium px-6 cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 flex items-center gap-2">
-              <Download className="w-4 h-4" />
+              {isDownloading ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Download className="w-4 h-4" />
+              )}
               Resume
             </Button>
           </a>
@@ -119,9 +132,21 @@ export function Navbar() {
               {link.name}
             </a>
           ))}
-          <a href="/CV.pdf" download="Kuldeep_Lakhani_CV.pdf" className="w-full" onClick={() => setMobileMenuOpen(false)}>
+          <a 
+            href="/Kuldeep_Lakhani_CV.pdf" 
+            download="Kuldeep_Lakhani_CV.pdf" 
+            className="w-full" 
+            onClick={() => {
+              setMobileMenuOpen(false)
+              handleDownload()
+            }}
+          >
             <Button className="w-full rounded-xl py-6 text-lg cursor-pointer hover:scale-[1.02] active:scale-95 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-2">
-              <Download className="w-5 h-5" />
+              {isDownloading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <Download className="w-5 h-5" />
+              )}
               Resume
             </Button>
           </a>
