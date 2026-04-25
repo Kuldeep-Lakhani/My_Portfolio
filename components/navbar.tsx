@@ -28,7 +28,7 @@ export function Navbar() {
     setIsDownloading(true)
     setTimeout(() => {
       setIsDownloading(false)
-    }, 1500)
+    }, 1000)
   }
 
   useEffect(() => {
