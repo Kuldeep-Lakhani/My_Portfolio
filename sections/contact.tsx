@@ -127,7 +127,7 @@ export function Contact() {
               <Button type="submit" size="lg" className="w-full rounded-xl cursor-pointer group" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : (
                   <>
-                    Send Message <Send className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    Send Message <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </>
                 )}
               </Button>
